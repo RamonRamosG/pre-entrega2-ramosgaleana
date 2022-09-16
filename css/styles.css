@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+ul,
+ol{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+/*---Header---*/
+.header{
+    background-color: rgba(102, 8, 8, 0.815);
+    padding: 15px;
+
+}
+.header__title{
+    text-align: center;
+    color: red;
+}
+.header__logo{
+    display: flex;
+    align-items: center;
+    justify-content: unset;
+}
+.header__logo{
+    padding: 10px;
+    width: 45px;
+}
+.header__nav ul{
+    display: flex;
+    padding: 20px;
+    color: red;
+    justify-content: space-around;
+}
+    @media(min-width: 768px){
+        .header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+    }
+    .header__nav{
+        width: 50%;
+    }
+    }
+    /*---Hero Section---*/
+    .hero{
+        grid-area: hero;
+    }
+    .hero{
+        height: 100vh;
+        background-image: url(/media/img/Middle-earth\ map_.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;}
+        .hero__text{
+            padding: 20px;
+            justify-content: center;
+            text-align: center;
+            color: rgb(247, 0, 12)
+        }
+        /*---Sección productos---*/
+        .productos{
+            grid-area: productos;
+        }
+        .productos__title{
+            background-color: saddlebrown;
+            text-align: center;
+            padding: 15px;
+        }
+        .productos__contenedor{
+            padding: 10px;
+            display: flex;
+            overflow: auto;
+            gap: 20px;
+        }
+        .tarjeta{
+            background-color: rgba(241, 222, 207, 0.432);
+            width: 180px;
+            height: 350px;
+            border: solid;
+            border-radius: 50px;
+            width: 300px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+        .tarjeta__img{
+            width: 100%;
+            border-radius: 50px;
+        }
+        .tarjeta__title{
+            text-align: center;
+            padding: 10px;
+        }
+        .tarjeta__boton{
+            padding: 3px 3px;
+            border: 2px solid black;
+            text-align: center;
+            border-radius: 20px;
+            color: black;
+            background-color: rgba(255, 0, 0, 0.527);
+        }
+        /*--- Ubicación ---*/
+        .ubicacion{
+            grid-area: ubicacion;
+        }
+        .ubicacion__title{
+            background-color: saddlebrown;
+            text-align: center;
+            padding: 15px;
+        }
+        .ubicacion__mapa{
+            width: 100%;
+        }
+/*---Redes---*/
+.redes{
+    grid-area: redes;
+}
+.redes__title{
+    background-color: saddlebrown;
+    text-align: center;
+    padding: 1px;
+}
+.contenedor-redes{
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 3rem;
+}
+@media (min-width: 768px){
+    .contenedor-redes{
+        height: 100%;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+
+/*---Estructura del Main---*/
+@media(min-width: 768px){
+    .main-index{
+        display: grid;
+        width: 100%;
+        grid-template-columns: 80% 20%;
+        grid-template-rows: repeat(3,auto);
+        grid-template-areas: 
+        "hero hero"
+        "productos redes"
+        "ubicacion redes";
+}
