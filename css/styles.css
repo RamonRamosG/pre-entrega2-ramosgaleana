@@ -24,11 +24,11 @@ a{
 .header__logo{
     display: flex;
     align-items: center;
-    justify-content: unset;
+    justify-content: flex-start;
 }
-.header__logo{
-    padding: 10px;
-    width: 45px;
+.header__logo2{
+    padding: 20px;
+    width: 100%;
 }
 .header__nav ul{
     display: flex;
@@ -36,12 +36,12 @@ a{
     color: red;
     justify-content: space-around;
 }
-    @media(min-width: 768px){
-        .header{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-    }
+@media(min-width: 768px){
+    .header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+}
     .header__nav{
         width: 50%;
     }
@@ -51,16 +51,30 @@ a{
         grid-area: hero;
     }
     .hero{
-        height: 100vh;
-        background-image: url(/media/img/Middle-earth\ map_.jpg);
+        height: 50%;
+        background-color: black;
         background-position: center;
         background-repeat: no-repeat;
-        background-size: cover;}
+        background-size: cover;
+        
+    }
         .hero__text{
             padding: 20px;
-            justify-content: center;
+            justify-content: space-around;
             text-align: center;
-            color: rgb(247, 0, 12)
+            color: rgb(240, 75, 10)
+        }
+            @media (min-width: 768px){
+                .contenedor-hero{
+                    height: 100%;
+                    align-items: center;
+                    flex-direction: column;
+                }
+            }
+        .container__img{
+            width: 60%;
+            padding: 30px;
+            border-radius: 50px;
         }
         /*---Sección productos---*/
         .productos{
@@ -69,7 +83,7 @@ a{
         .productos__title{
             background-color: saddlebrown;
             text-align: center;
-            padding: 15px;
+            padding: 30px;
         }
         .productos__contenedor{
             padding: 10px;
@@ -104,18 +118,28 @@ a{
             color: black;
             background-color: rgba(255, 0, 0, 0.527);
         }
-        /*--- Ubicación ---*/
-        .ubicacion{
-            grid-area: ubicacion;
+        /*---botones---*/
+        .tarjeta__boton{
+            background-color: lightseagreen;
+            color: solid black;
+            padding: 15px 15px;
+            border-radius: 20px;
         }
-        .ubicacion__title{
+        .tarjeta__boton:hover{
+            border: red 2px solid;
+            background-color: whitesmoke;
+            color: red;
+        }
+        /*---contacto---*/
+        .contacto{
+            grid-area: contacto;
+        }
+        .contacto__title{
             background-color: saddlebrown;
             text-align: center;
-            padding: 15px;
+            padding: 10px;
         }
-        .ubicacion__mapa{
-            width: 100%;
-        }
+
 /*---Redes---*/
 .redes{
     grid-area: redes;
@@ -123,12 +147,13 @@ a{
 .redes__title{
     background-color: saddlebrown;
     text-align: center;
-    padding: 1px;
+    padding: 10px;
 }
 .contenedor-redes{
-    padding: 20px;
+    padding: 10px;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     font-size: 3rem;
 }
 @media (min-width: 768px){
@@ -138,17 +163,26 @@ a{
         flex-direction: column;
     }
 }
-
-
-/*---Estructura del Main---*/
-@media(min-width: 768px){
-    .main-index{
-        display: grid;
-        width: 100%;
-        grid-template-columns: 80% 20%;
-        grid-template-rows: repeat(3,auto);
-        grid-template-areas: 
-        "hero hero"
-        "productos redes"
-        "ubicacion redes";
+    /*---Footer---*/
+    .footer{
+        grid-area: redes;
+    }
+    .footer__title{
+        background-color: saddlebrown;
+        text-align: center;
+        padding: 10px;
+    }
+    .contenedor-footer{
+        padding: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3rem;
+    }
+    @media (min-width: 768px){
+        .contenedor-footer{
+            height: 100%;
+            align-items: center;
+            flex-direction: column
+        }
 }
