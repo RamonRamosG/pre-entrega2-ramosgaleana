@@ -20,6 +20,7 @@ a{
 .header__title{
     text-align: center;
     color: red;
+    text-shadow: 10px 10px 10px rgb(20, 20, 19);
 }
 .header__logo{
     display: flex;
@@ -33,7 +34,8 @@ a{
 .header__nav ul{
     display: flex;
     padding: 20px;
-    color: red;
+    color: rgb(255, 0, 0);
+    text-shadow: 10px 5px 5px rgba(20, 20, 19, 0.692);
     justify-content: space-around;
 }
 
@@ -163,7 +165,6 @@ a{
             text-align: center;
             padding: 10px;
         }
-
 /*---Redes---*/
 .redes{
     grid-area: redes;
@@ -187,11 +188,67 @@ a{
         flex-direction: column;
     }
     /*---Animaciones--*/
-
+    .contenedor-animacion{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .caja-animacion{
+        width: 200px;
+        height: 200px;
+        border: solid rgba(0, 0, 0, 0.336) 3px;
+        text-align: center;
+        font-size: 2rem;
+        box-shadow: 20px 20px 20px 20px rgba(61, 6, 2, 0.822);
+        text-shadow: 5px 10px 10px coral;
+        *transition-property: all;
+        transition-duration: 2s;
+        transition: all 3s linear 2s;
+        animation-name: mover-caja;
+        animation-duration: 1s;
+        width: 300px;
+        animation-iteration-count: initial;
+        animation-timing-function: linear;
+        
+    }
+    @keyframes mover-caja{
+        0%{
+    transform: translate(0px);
+    background-color: rgba(231, 128, 10, 0.884);
+        }
+        25%{
+            transform: translate(0px);
+            background-color: rgba(246, 100, 3, 0.781);
+        }
+        50%{
+            transform: translate(0px, 0px);
+            background: rgba(248, 112, 0, 0.877);
+        }
+        75%{
+            transform: translate(0px, 0px);
+        }
+        100%{
+            transform: translate(0px, 0px);
+            background: rgba(214, 113, 11, 0.781);
+        }
+        }
 }
+        /*--- Ubicación ---*/
+        .ubicacion{
+            grid-area: ubicacion;
+        }
+        .ubicacion__title{
+            background-color: saddlebrown;
+            text-align: center;
+            padding: 10px;
+        }
+        .ubicacion__mapa{
+            width: 100%;
+            padding: 10px;
+        }
     /*---Footer---*/
     .footer{
-        grid-area: redes;
+        grid-area: footer;
     }
     .footer__title{
         background-color: saddlebrown;
@@ -200,6 +257,7 @@ a{
     }
     .contenedor-footer{
         padding: 0px;
+
         display: flex;
         justify-content: center;
         align-items: center;
@@ -207,8 +265,8 @@ a{
     }
     @media (min-width: 768px){
         .contenedor-footer{
-            height: 100%;
+            height: 0px;
             align-items: center;
-            flex-direction: column
+            flex-direction: column;
         }
-}
+    }
